@@ -14,7 +14,7 @@ dependency
 
 	dependencies {
 	
-	        implementation 'com.github.shoppingzhang:aopUtil:v1.0.0'
+	        implementation 'com.github.shoppingzhang:aop_util:v1.0.0'
 		
 	}
 
