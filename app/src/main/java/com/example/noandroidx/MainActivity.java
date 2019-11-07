@@ -7,6 +7,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.zxp.aspect.aop.annotation.BehaviorTrace;
 import com.zxp.aspect.aop.annotation.NeedPermission;
 import com.zxp.aspect.aop.annotation.PermissionCanceled;
 import com.zxp.aspect.aop.annotation.PermissionDenied;
@@ -57,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    @BehaviorTrace
     private void callLocation() {
 
     }

@@ -18,7 +18,7 @@ app的build.gradle
 
 	dependencies {
 	
-	        implementation 'com.github.shoppingzhang:aop_util:v1.0.0'
+	        implementation 'com.github.shoppingzhang:aop_util:v1.0.0-alpha'
 		
 	}
 
