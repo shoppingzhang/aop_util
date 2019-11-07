@@ -1,6 +1,6 @@
 # aopUtil
 
-项目的build.gradle
+Project的build.gradle
 
 	allprojects {
 	
@@ -10,7 +10,11 @@
 		}
 	}
   
-dependency
+app的build.gradle
+
+    apply plugin: 'android-aspectjx'
+
+    ...
 
 	dependencies {
 	

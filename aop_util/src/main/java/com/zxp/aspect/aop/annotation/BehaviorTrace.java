@@ -8,7 +8,7 @@ import java.lang.annotation.Target;
 /**
  * @author zhangxiaoping
  * @date 2019/10/25
- * description:
+ * description: 是否需要打印方法耗时
  */
 
 @Retention(RetentionPolicy.RUNTIME)

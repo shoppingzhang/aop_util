@@ -14,7 +14,7 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
 public @interface NeedPermission {
-    String[] permiss();
+    String[] permission();
 
     int requestCode() default 0;
 }

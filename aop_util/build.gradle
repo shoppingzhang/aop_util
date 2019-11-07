@@ -22,16 +22,6 @@ android {
         }
     }
 
-    /*task exportJar(type: Copy) {
-        delete 'build/libs/library.jar'
-        from('build/intermediates/packaged-classes/release/')
-        into('build/libs/')
-        include('classes.jar')
-        rename('classes.jar', 'library.jar')
-    }
-
-    exportJar.dependsOn(build)*/
-
 }
 
 dependencies {

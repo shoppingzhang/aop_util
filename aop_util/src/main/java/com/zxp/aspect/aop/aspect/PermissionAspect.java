@@ -69,7 +69,7 @@ public class PermissionAspect {
             return;
         }
 
-        PermissionRequestActivity.PermissionRequest(context, needPermission.permiss(), needPermission.requestCode(), new IPermission() {
+        PermissionRequestActivity.PermissionRequest(context, needPermission.permission(), needPermission.requestCode(), new IPermission() {
             @Override
             public void PermissionGranted() {
                 try {
