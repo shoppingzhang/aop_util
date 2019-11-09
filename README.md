@@ -2,6 +2,15 @@
 
 Project的build.gradle
 
+    buildscript {
+        ...
+
+        dependencies {
+            ...
+            classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:2.0.4'
+        }
+    }
+
 	allprojects {
 	
 		repositories {
