@@ -7,13 +7,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import com.zxp.aspect.aop.AopSdk;
 import com.zxp.aspect.aop.annotation.BehaviorTrace;
+import com.zxp.aspect.aop.annotation.Intercept;
 import com.zxp.aspect.aop.annotation.NeedPermission;
 import com.zxp.aspect.aop.annotation.PermissionCanceled;
 import com.zxp.aspect.aop.annotation.PermissionDenied;
 import com.zxp.aspect.aop.annotation.SingleClick;
 import com.zxp.aspect.aop.bean.CancelBean;
 import com.zxp.aspect.aop.bean.DenyBean;
+import com.zxp.aspect.aop.interfaces.Interceptor;
+
+import org.aspectj.lang.JoinPoint;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.i("zxp", "click normal");
                 callPhone();
+                AopSdk.setDebug(false);
             }
         });
         findViewById(R.id.btn_test1).setOnClickListener(new View.OnClickListener() {
@@ -37,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.i("zxp", "click normal");
                 callStorage();
+                AopSdk.setDebug(true);
             }
         });
         findViewById(R.id.btn_test2).setOnClickListener(new View.OnClickListener() {
@@ -46,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Log.i("zxp", "click normal");
                 callLocation();
+
             }
         });
         findViewById(R.id.btn_test3).setOnClickListener(new View.OnClickListener() {
@@ -56,8 +64,17 @@ public class MainActivity extends AppCompatActivity {
                 Log.i("zxp", "click normal");
             }
         });
+        AopSdk.setDebug(false);
+        AopSdk.setIntercept(new Interceptor() {
+            @Override
+            public boolean intercept(int type, JoinPoint joinPoint) throws Throwable {
+                Log.i("zxp", "type" + type);
+                return true;
+            }
+        });
     }
 
+    @Intercept(3)
     @BehaviorTrace
     private void callLocation() {
 

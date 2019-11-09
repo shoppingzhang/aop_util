@@ -2,7 +2,7 @@ package com.zxp.aspect.aop.aspect;
 
 import android.util.Log;
 
-import com.zxp.aspect.aop.BuildConfig;
+import com.zxp.aspect.aop.AopSdk;
 import com.zxp.aspect.aop.annotation.BehaviorTrace;
 
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -44,7 +44,7 @@ public class BehaviorTraceAspect {
         sb.append(" 耗时为：");
         sb.append((end - start));
         sb.append("ms");
-        if (annotation.needPrint() && BuildConfig.DEBUG) {
+        if (annotation.needPrint() && AopSdk.sIsDebug) {
             Log.d(simpleName, sb.toString());
         }
     }
